@@ -7,8 +7,8 @@ class Amp < Formula
 
   depends_on "rust" => :build
   depends_on "cmake" => :build
-  depends_on "openssl" => :build
-  depends_on "libssh2" => :build
+  depends_on "openssl"
+  depends_on "libssh2"
 
   def install
     system "cargo", "build", "--release"
