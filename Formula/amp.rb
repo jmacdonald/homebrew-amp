@@ -16,12 +16,22 @@ class Amp < Formula
   end
 
   test do
-    # Start and stop amp gracefully.
-    pid = spawn "#{bin}/amp"
-    Process.kill "INT", pid
+    (testpath/"test.exp").write <<~EOS
+      spawn "amp" "test_write"
+      interact timeout 1 return
 
-    # Collect and return the amp process' status.
-    _, status = Process.wait2 pid
-    status
+      # switch to insert mode and add data
+      send "i"
+      send "test data"
+
+      # escape to normal mode, save the file, and quit
+      send "\x1b"
+      send "s"
+      send "Q"
+      expect eof
+    EOS
+
+    system "expect", "-f", "test.exp"
+    assert_match /test data/, IO.read("./test_write")
   end
 end
