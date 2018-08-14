@@ -1,8 +1,8 @@
 class Amp < Formula
   desc "Text editor for your terminal"
   homepage "https://amp.rs"
-  url "https://github.com/jmacdonald/amp/archive/0.3.4.tar.gz"
-  sha256 "c950560292984d135ed5c92c87a2969a7b2b2d3ab97c5d4d5f66075edbc95169"
+  url "https://github.com/jmacdonald/amp/archive/0.5.0.tar.gz"
+  sha256 "364c389967e9fc40490f66ffc7c80d1fc8c54fe792d2e60b1da05e68cf91a061"
   head "https://github.com/jmacdonald/amp.git"
 
   depends_on "rust" => :build
