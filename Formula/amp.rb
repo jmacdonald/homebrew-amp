@@ -1,12 +1,12 @@
 class Amp < Formula
-  desc "Text editor for your terminal"
+  desc "Complete text editor for your terminal"
   homepage "https://amp.rs"
-  url "https://github.com/jmacdonald/amp/archive/0.5.0.tar.gz"
-  sha256 "364c389967e9fc40490f66ffc7c80d1fc8c54fe792d2e60b1da05e68cf91a061"
+  url "https://github.com/jmacdonald/amp/archive/0.5.2.tar.gz"
+  sha256 "e1f22a829205cf44f8c3fcf5660dbdb9a3c5a1f64b92c67dcdb75a30ad7e5a60"
   head "https://github.com/jmacdonald/amp.git"
 
-  depends_on "rust" => :build
   depends_on "cmake" => :build
+  depends_on "rust" => :build
   depends_on "openssl"
 
   def install
@@ -14,7 +14,7 @@ class Amp < Formula
     ENV["OPENSSL_INCLUDE_DIR"] = Formula["openssl"].opt_include
     ENV["OPENSSL_LIB_DIR"] = Formula["openssl"].opt_lib
 
-    system "cargo", "build", "--release"
+    system "cargo", "install", "--root", prefix, "--path", "."
     bin.install "target/release/amp"
   end
 
