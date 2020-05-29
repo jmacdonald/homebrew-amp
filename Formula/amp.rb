@@ -1,8 +1,8 @@
 class Amp < Formula
   desc "Text editor for your terminal"
   homepage "https://amp.rs"
-  url "https://github.com/jmacdonald/amp/archive/0.6.0.tar.gz"
-  sha256 "3529e9aa51df80ff3bd9db340423bf0975b58473fc0a307ea6eee799089ee2e2"
+  url "https://github.com/jmacdonald/amp/archive/0.6.2.tar.gz"
+  sha256 "9279efcecdb743b8987fbedf281f569d84eaf42a0eee556c3447f3dc9c9dfe3b"
 
   head "https://github.com/jmacdonald/amp.git"
 
